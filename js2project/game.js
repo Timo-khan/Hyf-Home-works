@@ -53,11 +53,27 @@ function checkForMatch() {
 
     chosenCards = [];
     chosenCardsIds = [];
-    attemptsHolder.textContent = attempts;
-    foundHolder.textContent = foundCards;
 
     if (foundCards === cardsInGame) {
         alert("Well done!");
+    }
+
+    const resetButton = document.querySelector("#button");  
+    resetButton.addEventListener("click", resetGame);
+
+    function resetGame() {
+        // Clear the grid (remove all current cards)
+        grid.innerHTML = '';
+    
+        // Reset game variables 
+        attempts = 0;
+        foundCards = 0;
+        chosenCards = [];
+        chosenCardsIds = [];
+    
+        // Shuffle cards again and reinitialize the board
+        cardsList.sort(() => 0.5 - Math.random());
+        initiateBoard();
     }
 }
 
