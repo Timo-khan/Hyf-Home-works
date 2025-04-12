@@ -5,7 +5,7 @@ const cardsList = [
 cardsList.sort(() => 0.5 - Math.random());
 
 const grid = document.querySelector(".gameGrid");
-const cardsInGame = 12;
+const cardsInGame = 6;
 let attempts = 0;
 let foundCards = 0;
 
@@ -62,16 +62,12 @@ function checkForMatch() {
     resetButton.addEventListener("click", resetGame);
 
     function resetGame() {
-        // Clear the grid (remove all current cards)
         grid.innerHTML = '';
-    
-        // Reset game variables 
+
         attempts = 0;
         foundCards = 0;
         chosenCards = [];
         chosenCardsIds = [];
-    
-        // Shuffle cards again and reinitialize the board
         cardsList.sort(() => 0.5 - Math.random());
         initiateBoard();
     }
