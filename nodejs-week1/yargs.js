@@ -1,3 +1,4 @@
+//Passing Arguments Using Yargs
 1
 2
 3
@@ -10,3 +11,5 @@ const args = require('yargs').argv;
  
 console.log('Name: ' + args.name);
 console.log('Age: ' + args.age);
+
+//code to execute "$node yargs.js --name=node --age=15"
