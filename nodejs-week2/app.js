@@ -1,12 +1,17 @@
-import express from 'express'
+import express from 'express';
+import documents from './documents.json' with { type: 'json' }
+// import documents from './documents.json' assert { type: 'json' }; alternative to import from .json file
+
+
 const app = express();
 const port = process.env.PORT || 3000;
 
-// Support parsing JSON requests
-app.use(express.json());
-
-app.get("/", (req, res) => {
-    res.send("This is a search engine");
+app.get('/search', (req, res) => {
+    const query = req.query.q;
+    if (!query) {
+    res.send(documents);
+    return;
+    }
 });
 
 app.listen(port, () => {
