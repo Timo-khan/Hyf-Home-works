@@ -1,0 +1,13 @@
+[
+    {
+        "id": 1,
+        "type": "file",
+        "value": "files are always important"
+    },
+        {
+        "id": 2,
+        "product": "laptop",
+        "price": "100",
+        "description": "new laptop"
+    }
+]
